@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T; cin >> T;
+    for (int cas = 1; cas <= T; ++cas) {
+        int n; cin >> n;
+        string seats; cin >> seats;
+        int mintot = 0, z = 0;
+        for (int i = 0; i < seats.size(); i++) {
+            if (seats[i] == 1) {
+                mintot++;
+                z += z / 3;
+                z = 0;
+            } else {
+                z++;
+            }
+        }
+        if (mintot == 0 and z < 3) mintot = 1;
+        else mintot += z / 3;
+    }
+    return 0;
+}
